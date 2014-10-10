@@ -1,5 +1,5 @@
 /**
- * jQuery Text to Input Plugin
+ * jQuery Text to Input Plugin a.k.a. contenteditable fallback
  *
  * Very simple plugin to make elements editable on click. It will check 
  * if the browser does support the "contenteditable" feature. If not, 
