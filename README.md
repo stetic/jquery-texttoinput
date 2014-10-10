@@ -1,6 +1,7 @@
-# jQuery Text to Input Plugin
+# jQuery Text to Input Plugin a.k.a contenteditable fallback
 
-This simple plugin enables you to transform text elements into an input text element on click and back on blur.
+This simple plugin enables you to make elements editable on click. It will check if the browser does support
+the "contenteditable" feature. If not, an input field is generated.
  
 ## Example Usage
 
@@ -28,8 +29,9 @@ You can set the following options if you call the plugin via Javascript:
 
 ```js
 $('span').textToInput({
-	select_text: true, 			// whenever the input field should be selected with focus
-	css_class: 'myinputclass'   // css class of input element
+	select_text: true, 			 // Whenever the input field should be selected with focus. Default: true.
+	css_class: 'myinputclass',   // Css class of input element. Default: ''.
+	contenteditable: true        // Enable or disable contenteditable support. Default: true.
 });
 ```
 
