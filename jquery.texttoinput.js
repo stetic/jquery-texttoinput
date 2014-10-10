@@ -4,21 +4,21 @@
  * Very simple plugin to transform text elements into an input text 
  * element on click and back to text on blur.
  *
- * @package     jQuery.TextToInput
+ * @package     jQuery.textToInput
  * @copyright   Copyright (c) 2014 Nico Puhlmann <nico@puhlmann.com>
  * @license     Released under the MIT license: http://mths.be/mit
  */
 
 (function($) {
 
-  $.fn.TextToInput = function(options) {
+  $.fn.textToInput = function(options) {
 
     options = options || {};
 
     return this.each( function () {
 	
     	// set options for current element
-    	var settings = $.extend({}, $.fn.TextToInput.defaults, {
+    	var settings = $.extend({}, $.fn.textToInput.defaults, {
         select_text:      true, 
         css_class:        ''
     	}, options);
@@ -56,15 +56,15 @@
   
     }); // this.each
 
-  }; // $.fn.TextToInput
+  }; // $.fn.textToInput
 
-  $.fn.TextToInput.defaults = {
+  $.fn.textToInput.defaults = {
   	select_text: true, // whenever the input field should be selected with focus
   	css_class: ''      // css class of input element
   };
   
   $(function () {
-    $('.texttoinput').TextToInput();
+    $('.texttoinput').textToInput();
   })
 
 })(jQuery);

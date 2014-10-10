@@ -15,10 +15,10 @@ To quickly add the functionality to any element just add class="texttoinput".
 
 ### Javascript
 
-Call the function via javascript:
+Call the function via Javascript:
 
 ```js
-$('span').texttoinput();
+$('span').textToInput();
 ```
 
 
@@ -27,7 +27,7 @@ $('span').texttoinput();
 You can set the following options if you call the plugin via Javascript:
 
 ```js
-$('span').texttoinput({
+$('span').textToInput({
 	select_text: true, 			// whenever the input field should be selected with focus
 	css_class: 'myinputclass'   // css class of input element
 });
