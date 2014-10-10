@@ -10,7 +10,7 @@ To quickly add the functionality to any element just add class="texttoinput".
 
 
 ```html
-<span class="texttoinput">This text should be transfomed into input field.</span>
+<span class="texttoinput">This text should be transformed into an input field.</span>
 ```
 
 ### Javascript
