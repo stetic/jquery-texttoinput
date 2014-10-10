@@ -1,8 +1,9 @@
 /**
  * jQuery Text to Input Plugin
  *
- * Very simple plugin to transform text elements into an input text 
- * element on click and back to text on blur.
+ * Very simple plugin to make elements editable on click. It will check 
+ * if the browser does support the "contenteditable" feature. If not, 
+ * an input field is generated.
  *
  * @package     jQuery.textToInput
  * @copyright   Copyright (c) 2014 Nico Puhlmann <nico@puhlmann.com>
