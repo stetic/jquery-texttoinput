@@ -57,19 +57,21 @@
           $(this).unbind('blur.texttoinput');
           change($(this));
           if(!hasContentEditable) {
-            $(this).parent().html( $(this).parent().data('default_html') ).bind('click.texttoinput', toggle);
+            $(this).parent().text( $(this).val() ).bind('click.texttoinput', toggle);
           }
         });
         
         if(settings.return_change === true) {
+          
           input_element.bind('keydown.texttoinput', function(e) {
-            e.preventDefault();
-            $(this).unbind('keydown.texttoinput');
             if(e.which == 13) {
+              e.preventDefault();
+              $(this).unbind('keydown.texttoinput');
               $(this).blur();
             }
           });
-          }
+          
+        }
 
       },
 
