@@ -29,9 +29,13 @@ You can set the following options if you call the plugin via Javascript:
 
 ```js
 $('span').textToInput({
-	select_text: true, 			 // Whenever the input field should be selected with focus. Default: true.
-	css_class: 'myinputclass',   // Css class of input element. Default: ''.
-	contenteditable: true        // Enable or disable contenteditable support. Default: true.
+	select_text: true, 			  // Whenever the input field should be selected with focus. Default: true.
+	css_class: 'myinputclass',    // Css class of input element. Default: ''.
+	contenteditable: true,        // Enable or disable contenteditable support. Default: true.
+	onChange: function() {
+	  console.log($(this).val());
+	},
+	return_change: true           // Whenever onChange should be invoked when return key is pressed.
 });
 ```
 
