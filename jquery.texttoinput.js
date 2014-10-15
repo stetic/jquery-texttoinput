@@ -52,7 +52,6 @@
           
         }
 
-
         input_element.bind('blur.texttoinput', function() {          
           $(this).unbind('blur.texttoinput');
           change($(this));
@@ -61,16 +60,20 @@
           }
         });
         
-        if(settings.return_change === true) {
-          
-          input_element.bind('keydown.texttoinput', function(e) {
-            if(e.which == 13) {
-              e.preventDefault();
-              $(this).unbind('keydown.texttoinput');
-              $(this).blur();
-            }
-          });
-          
+        input_element.bind('keydown.texttoinput', function(e) {
+          if(e.which == 13 && settings.return_change === true) {
+            e.preventDefault();
+            $(this).unbind('keydown.texttoinput');
+            $(this).blur();
+          } else if(e.which == 27) {
+            e.preventDefault();
+            $(this).parent().html( $(this).parent().data('default_html') );
+            $(this).unbind('blur.texttoinput').blur();
+          }
+        });
+        
+        if(typeof(settings.onFocus) == 'function') {
+          settings.onFocus.apply($(this)[0]);
         }
 
       },
@@ -128,7 +131,8 @@
     select_text: true,     // whenever the input field should be selected with focus
     css_class: '',         // css class of input element
     contenteditable: true, // enable or disable contenteditable support
-    onChange: null,        // onChange callback 
+    onFocus: null,         // onFocus callback
+    onChange: null,        // onChange callback
     return_change: true    // whenever onChange should be invoked when return key is pressed
   };
   
